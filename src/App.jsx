@@ -1,6 +1,7 @@
 import React from 'react';
 import defaultDataset from './dataset';
 import './assets/styles/style.css';
+import { AnswersList } from './components/index';
 
 export default class App extends React.Component {
   constructor(props){
@@ -13,11 +14,25 @@ export default class App extends React.Component {
       open: false
     }
   }
+
+  initAnswers = () => {
+    const initDataset = this.state.dataset[this.state.currentID]
+    const initAnswers = initDataset.answers;
+
+    this.setState ({
+      answers: initAnswers
+    })
+  }
+
+  componentDidMount() {
+    this.initAnswers()
+  }
+
   render(){
   return (
     <section className="c-section">
       <div className="c-box">
-        {this.state.currentID}
+        <AnswersList answers={this.state.answers} />
       </div>
     </section>
   );
