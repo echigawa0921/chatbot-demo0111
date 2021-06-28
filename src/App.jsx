@@ -1,6 +1,6 @@
-import './App.css';
 import React from 'react';
 import defaultDataset from './dataset';
+import './assets/styles/style.css';
 
 export default class App extends React.Component {
   constructor(props){
@@ -15,9 +15,11 @@ export default class App extends React.Component {
   }
   render(){
   return (
-    <div>
- 
-    </div>
+    <section className="c-section">
+      <div className="c-box">
+
+      </div>
+    </section>
   );
 }
 }
