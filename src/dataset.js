@@ -19,28 +19,28 @@ const defaultDataset = {
     },
     "website": {
         answers: [
-            {content: "問い合わせる", nextId: "contact"},
+            {content: "問い合わせ", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
         question: "Webサイト細作についてですね。コチラからお問い合わせできます。",
     },
     "webapp": {
         answers: [
-            {content: "問い合わせる", nextId: "contact"},
+            {content: "問い合わせ", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
         question: "Webアプリ開発についてですね。コチラからお問い合わせできます。",
     },
     "automation_tool": {
         answers: [
-            {content: "問い合わせる", nextId: "contact"},
+            {content: "問い合わせ", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
         question: "自動化ツール開発についてですね。コチラからお問い合わせできます。",
     },
     "other_jobs": {
         answers: [
-            {content: "問い合わせる", nextId: "contact"},
+            {content: "問い合わせ", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
         question: "その他についてですね。コチラからお問い合わせできます。",

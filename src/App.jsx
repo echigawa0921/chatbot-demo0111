@@ -39,6 +39,11 @@ displayNextQuestion = (nextQuestionId) => {
       case (nextQuestionId === 'init'):
         setTimeout(() => this.displayNextQuestion(nextQuestionId), 400);
         break;
+
+      case (nextQuestionId === 'contact'):
+        this.handleClickOpen();
+        break;
+      
       // 正規表現でhttpsから始まるものか判定する。
       case(/^https:*/.test(nextQuestionId)):
         const a = document.createElement('a')
