@@ -6,8 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-export default class FormDialog extends Tract.component {
-
+export default class FormDialog extends React.Component {
     constructor(props){
         super(props);
     }
@@ -29,10 +28,10 @@ export default class FormDialog extends Tract.component {
               </DialogContentText>
             </DialogContent>
             <DialogActions>
-              <Button onClick={handleClose} color="primary">
+              <Button onClick={this.props.handleClose} color="primary">
                 Disagree
               </Button>
-              <Button onClick={handleClose} color="primary" autoFocus>
+              <Button onClick={this.props.handleClose} color="primary" autoFocus>
                 Agree
               </Button>
             </DialogActions>

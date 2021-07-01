@@ -13,7 +13,7 @@ export default class App extends React.Component {
       chats: [],
       currentID: "init",
       dataset: defaultDataset,
-      open: false
+      open: true
     }
     this.selectAnswer = this.selectAnswer.bind(this)
     this.handleClickOpen = this.handleClickOpen.bind(this)
@@ -63,12 +63,13 @@ displayNextQuestion = (nextQuestionId) => {
     }
   } 
 
-  handleClickOpen = () => {
-    this.setOpen(true);
+    // 問い合わせフォーム用モーダルを開く関数
+    handleClickOpen = () => {
+      this.setState({open: true})
   };
-
-   handleClose = () => {
-    this.setOpen(false);
+  // 問い合わせフォーム用モーダルを閉じる関数
+  handleClose = () => {
+      this.setState({open: false})
   };
 
 
