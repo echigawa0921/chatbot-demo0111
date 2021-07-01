@@ -29,7 +29,7 @@ const defaultDataset = {
             {content: "問い合わせ", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "100m走走るのにコツはいらないです。必要なのは意識出来ているか出来ていないかです。コチラからお問い合わせ出来るので詳細にお聞かせください！",
+        question: "100m走を走るのに筋力やパワーはいらないです。必要なのは走る際に必要なポイントを意識できているかだけです。コチラからお問い合わせ出来るので詳細にお聞かせください！",
     },
     "automation_tool": {
         answers: [
