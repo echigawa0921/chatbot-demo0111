@@ -36,14 +36,14 @@ const defaultDataset = {
             {content: "問い合わせ", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "速く走れて損するスポーツはありません。ぜひ、詳しくお聞かせください！",
+        question: "速く走れて損するスポーツはありません。ぜひ、種目ポジション等詳しくお聞かせください！",
     },
     "other_jobs": {
         answers: [
             {content: "問い合わせ", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "かっこよく走りたいですよね。コチラからお問い合わせ出来るので詳細にお聞かせください！",
+        question: "かっこよく走りたいですよね。中学校まで実は、走るのが速ければそれだけでモテます。コチラからお問い合わせ出来るので詳細にお聞かせください！",
     },
     "consultant": {
         answers: [
