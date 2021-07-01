@@ -2,6 +2,7 @@ import React from 'react';
 import defaultDataset from './dataset';
 import './assets/styles/style.css';
 import { AnswersList, Chats } from './components/index';
+import { NextWeekOutlined } from '@material-ui/icons';
 
 export default class App extends React.Component {
   constructor(props){
@@ -33,8 +34,16 @@ displayNextQuestion = (nextQuestionId) => {
   selectAnswer = (selectedAnswer, nextQuestionId) => {
     switch(true) {
       case (nextQuestionId === 'init'):
-        this.displayNextQuestion(nextQuestionId)
-         break;
+        setTimeout(() => this.displayNextQuestion(nextQuestionId), 400);
+        break;
+      // 正規表現でhttpsから始まるものか判定する。
+      case(/^https:*/.test(nextQuestionId)):
+        const a = document.createElement('a')
+        a.href = nextQuestionId;
+        a.target = '_blank';
+        a.click();
+        break;
+
       default:
         const chats = this.state.chats;
         chats.push({
