@@ -34,7 +34,28 @@ export default class FormDialog extends React.Component {
     }
 
 
+    validateEmailFormat = (email) => {
+        const regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        return regex.test(email)
+    }
 
+    validateRequiredInput = (...args) => {
+        let isBlank = false;
+        for (let i = 0; i < args.length; i=(i+1)|0) {
+            if (args[i] === "") {
+                isBlank = true;
+            }
+        }
+        return isBlank
+    };
+
+    submitForm = () => {
+        const name = this.state.name
+        const email = this.state.email
+        const description = this.state.description
+
+
+    }
  
     render() {
         return(
@@ -62,10 +83,10 @@ export default class FormDialog extends React.Component {
             </DialogContent>
             <DialogActions>
               <Button onClick={this.props.handleClose} color="primary">
-                Disagree
+                キャンセル
               </Button>
-              <Button onClick={this.props.handleClose} color="primary" autoFocus>
-                Agree
+              <Button onClick={this.submitForm} color="primary" autoFocus>
+                送信する
               </Button>
             </DialogActions>
           </Dialog>
