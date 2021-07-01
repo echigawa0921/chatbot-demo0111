@@ -49,13 +49,47 @@ export default class FormDialog extends React.Component {
         return isBlank
     };
 
+    // Slackに問い合わせがあったことを通知する
     submitForm = () => {
-        const name = this.state.name
-        const email = this.state.email
-        const description = this.state.description
+        const name = this.state.name;
+        const email = this.state.email;
+        const description = this.state.description;
 
+        const isBlank = this.validateRequiredInput(name, email, description)
+        const isValidEmail = this.validateEmailFormat(email)
 
-    }
+        if (isBlank) {
+            alert('必須入力欄が空白です。')
+            return false
+        } else if (!isValidEmail) {
+            alert('メールアドレスの書式が異なります。')
+            return false
+        } else {
+            const payload = {
+                text: 'お問い合わせがありました\n'
+                    + 'お名前: ' + name + '\n'
+                    + 'メールアドレス: ' + email + '\n'
+                    + '【問い合わせ内容】\n' + description
+            };
+
+            const url = 'YOUR_INCOMING_WEBHOOK_URL';
+
+            // fetchメソッドでフォームの内容をSlackのIncoming Webhook URL に送信する
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(payload)
+            }).then(() => {
+                alert('送信が完了しました。追ってご連絡いたします！');
+                this.setState( {
+                    name: "",
+                    email: "",
+                    description: "",
+                })
+                return this.props.handleClose()
+            })
+        }
+    };
+
  
     render() {
         return(
