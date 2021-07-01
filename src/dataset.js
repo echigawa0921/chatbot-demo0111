@@ -1,80 +1,71 @@
 const defaultDataset = {
     "init": {
         answers: [
-            {content: "仕事を依頼したい", nextId: "job_offer"},
-            {content: "エンジニアのキャリアについて相談したい", nextId: "consultant"},
-            {content: "学習コミュニティについて知りたい", nextId: "community"},
-            {content: "お付き合いしたい", nextId: "dating"},
+            {content: "とにかく足が速くなりたい", nextId: "job_offer"},
+            {content: "越川のタイムを知りたい", nextId: "consultant"},
+            {content: "おすすめのトレーニング", nextId: "community"},
+            {content: "お付き合いから始めたい", nextId: "dating"},
         ],
-        question: "こんにちは！越川の模擬面接チャットへようこそ！どしどし質問してください！",
+        question: "こんにちは！越川のかけっこ教室へようこそ！どしどし質問してください！",
     },
     "job_offer": {
         answers: [
-            {content: "Webサイトを制作してほしい", nextId: "website"},
-            {content: "Webアプリを開発してほしい", nextId: "webapp"},
-            {content: "自動化ツールを作ってほしい", nextId: "automation_tool"},
-            {content: "その他", nextId: "other_jobs"}
+            {content: "50m走", nextId: "website"},
+            {content: "100m走", nextId: "webapp"},
+            {content: "他のスポーツに活かしたい", nextId: "automation_tool"},
+            {content: "走り方をかっこよくしたい", nextId: "other_jobs"}
         ],
-        question: "どのようなお仕事でしょうか？",
+        question: "速くなりたい種目を選んでください",
     },
     "website": {
         answers: [
             {content: "問い合わせ", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "Webサイト細作についてですね。コチラからお問い合わせできます。",
+        question: "50m走で周りより速く走りたいんですね。コチラからお問い合わせ出来るので詳細にお聞かせください！",
     },
     "webapp": {
         answers: [
             {content: "問い合わせ", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "Webアプリ開発についてですね。コチラからお問い合わせできます。",
+        question: "100m走で周りより速く走りたいんですね。任せてください。コチラからお問い合わせ出来るので詳細にお聞かせください！",
     },
     "automation_tool": {
         answers: [
             {content: "問い合わせ", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "自動化ツール開発についてですね。コチラからお問い合わせできます。",
+        question: "速く走れて損するスポーツはありません。ぜひ、詳しくお聞かせください！",
     },
     "other_jobs": {
         answers: [
             {content: "問い合わせ", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "その他についてですね。コチラからお問い合わせできます。",
+        question: "かっこよく走りたいですよね。コチラからお問い合わせ出来るので詳細にお聞かせください！",
     },
     "consultant": {
         answers: [
-            {content: "YouTubeで動画を見る", nextId: "https://www.youtube.com/channel/UC-bOAxx-YOsviSmqh8COR0w"},
-            {content: "学習コミュニティについて知りたい", nextId: "community"},
+            {content: "試合の走りを見る", nextId: "https://www.youtube.com/watch?v=RFNiG2EIDzo&list=LL&index=17&t=2s"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "トラハックは普段からYouTubeでキャリアについて発信しています。また、僕が運営するエンジニア向け学習コミュニティ内でも相談に乗っていますよ。",
+        question: "越川は、高校時代100mを10秒82,200mを22.19で走り、京都ジュニア大会5位、奈良大会200m走3位の成績を収めています。",
     },
     "community": {
         answers: [
-            {content: "どんな活動をしているの？", nextId: "community_activity"},
-            {content: "コミュニティに参加したい", nextId: "https://torahack.web.app/community/"},
+            {content: "おすすめ腹筋YouTube", nextId: "https://www.youtube.com/watch?v=sM3W0b1PdOY&t=171s"},
+            {content: "おすすめ階段メニュー", nextId: "https://www.youtube.com/watch?v=r4fUcKTZscU/"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "2020年3月から学習コミュニティを始めました！🎉Webエンジニアへの転職を目指す人向けに、プログラミングを教えたりキャリアの相談に乗っています。",
-    },
-    "community_activity": {
-        answers: [
-            {content: "さらに詳細を知りたい", nextId: "https://youtu.be/tIzE7hUDbBM"},
-            {content: "コミュニティに参加したい", nextId: "https://torahack.web.app/community/"},
-            {content: "最初の質問に戻る", nextId: "init"}
-        ],
-        question: "フロントエンド向けの教材の提供、キャリアや勉強法に関するメルマガの配信、週1のオンライン作業会などを開催しています！\n詳細はYouTube動画で紹介しています。",
+        question: "特に階段ダッシュと腹筋を鍛えることを推奨しています。",
     },
     "dating": {
         answers: [
-            {content: "DMする", nextId: "https://twitter.com/torahack_"},
+            {content: "DMする", nextId: "https://www.wantedly.com/id/yuki_Echigawa9"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "まずは一緒にランチでもいかがですか？DMしてください😘",
+        question: "まずは一緒にランチでもいかがですか？DMしてください。",
     },
 }
 
