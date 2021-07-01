@@ -3,6 +3,7 @@ import defaultDataset from './dataset';
 import './assets/styles/style.css';
 import { AnswersList, Chats } from './components/index';
 import { NextWeekOutlined } from '@material-ui/icons';
+import FormDialog from './components/Froms/FromDialog';
 
 export default class App extends React.Component {
   constructor(props){
@@ -15,6 +16,8 @@ export default class App extends React.Component {
       open: false
     }
     this.selectAnswer = this.selectAnswer.bind(this)
+    this.handleClickOpen = this.handleClickOpen.bind(this)
+    this.handleClose = this.handleClose.bind(this)
   }
 
 displayNextQuestion = (nextQuestionId) => {
@@ -58,7 +61,16 @@ displayNextQuestion = (nextQuestionId) => {
         setTimeout( () => this.displayNextQuestion(nextQuestionId), 500);
          break;
     }
-  }
+  } 
+
+  handleClickOpen = () => {
+    this.setOpen(true);
+  };
+
+   handleClose = () => {
+    this.setOpen(false);
+  };
+
 
   componentDidMount() {
     this.initAnswer = ""
@@ -81,6 +93,7 @@ displayNextQuestion = (nextQuestionId) => {
       <div className="c-box">
         <Chats chats={this.state.chats} />
         <AnswersList answers={this.state.answers} select={this.selectAnswer} />
+        <FormDialog open={this.state.open} handleClose={this.handleClose} />
       </div>
     </section>
   );
