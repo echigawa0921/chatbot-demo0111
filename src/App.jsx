@@ -46,14 +46,24 @@ displayNextQuestion = (nextQuestionId) => {
           chats: chats
         })
 
-        this.displayNextQuestion(nextQuestionId)
-         break
+        setTimeout( () => this.displayNextQuestion(nextQuestionId), 500);
+         break;
     }
   }
 
   componentDidMount() {
     this.initAnswer = ""
     this.selectAnswer(this.initAnswer, this.state.currentID)
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const scrollArea = document.getElementById('scroll-area');
+    if (scrollArea){
+      scrollArea.scrollTo({
+        top: scrollArea.scrollHeight,
+        behavior: 'smooth'
+      })
+    }
   }
 
   render(){
