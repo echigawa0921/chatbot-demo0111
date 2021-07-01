@@ -15,7 +15,7 @@ const defaultDataset = {
             {content: "他のスポーツに活かしたい", nextId: "automation_tool"},
             {content: "走り方をかっこよくしたい", nextId: "other_jobs"}
         ],
-        question: "速くなりたい種目を選んでください",
+        question: "速くなりたい種目（スポーツ）を選んでください",
     },
     "website": {
         answers: [
@@ -29,7 +29,7 @@ const defaultDataset = {
             {content: "問い合わせ", nextId: "contact"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "100m走で周りより速く走りたいんですね。任せてください。コチラからお問い合わせ出来るので詳細にお聞かせください！",
+        question: "100m走走るのにコツはいらないです。必要なのは意識出来ているか出来ていないかです。コチラからお問い合わせ出来るので詳細にお聞かせください！",
     },
     "automation_tool": {
         answers: [
