@@ -62,7 +62,7 @@ const defaultDataset = {
     },
     "dating": {
         answers: [
-            {content: "DMする", nextId: "https://www.wantedly.com/id/yuki_Echigawa9"},
+            {content: "連絡する", nextId: "https://www.wantedly.com/id/yuki_Echigawa9"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
         question: "まずは一緒にランチでもいかがですか？DMしてください。",
