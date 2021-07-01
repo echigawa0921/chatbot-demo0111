@@ -13,7 +13,7 @@ export default class App extends React.Component {
       chats: [],
       currentID: "init",
       dataset: defaultDataset,
-      open: true
+      open: false
     }
     this.selectAnswer = this.selectAnswer.bind(this)
     this.handleClickOpen = this.handleClickOpen.bind(this)
