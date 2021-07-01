@@ -58,7 +58,7 @@ const defaultDataset = {
             {content: "おすすめ階段メニュー", nextId: "https://www.youtube.com/watch?v=r4fUcKTZscU/"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "特に階段ダッシュと腹筋を鍛えることを推奨しています。",
+        question: "特に下半身強化に階段ダッシュと体幹の安定に腹筋を鍛えることを推奨しています。",
     },
     "dating": {
         answers: [
