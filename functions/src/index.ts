@@ -9,12 +9,6 @@ const sendResponse = (response: functions.Response, statusCode: number, body: an
         body: JSON.stringify(body)
     });
 };
-
-/**
- * Execute the following command in your Terminal app
- * curl -X POST https://YOUR_REGION-YOUR_PROJECT_NAME.cloudfunctions.net/addDataset -H "Content-Type:application/json" -d @dataset.json
-*/
-
 export const addDataset = functions.https.onRequest(async (req: any, res: any) => {
     if (req.method !== 'POST') {
         sendResponse(res, 405, {error: "Invalid Request"})
