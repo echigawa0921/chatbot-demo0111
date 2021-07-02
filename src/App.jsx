@@ -1,9 +1,7 @@
 import React from 'react';
-import defaultDataset from './dataset';
 import './assets/styles/style.css';
 import { AnswersList, Chats } from './components/index';
-import { NextWeekOutlined } from '@material-ui/icons';
-import FormDialog from './components/Froms/FromDialog';
+import FormDialog from './components/Forms/FormDialog';
 import {db} from './firebase/index'
 
 export default class App extends React.Component {
@@ -12,8 +10,8 @@ export default class App extends React.Component {
     this.state = {
       answers:[],
       chats: [],
-      currentID: "init",
-      dataset: defaultDataset,
+      currentId: "init",
+      dataset: {},
       open: false
     }
     this.selectAnswer = this.selectAnswer.bind(this)
@@ -31,7 +29,7 @@ displayNextQuestion = (nextQuestionId) => {
   this.setState({
     answers: this.state.dataset[nextQuestionId].answers,
     chats: chats,
-    currentID: nextQuestionId
+    currentId: nextQuestionId
   })
 }
 
@@ -40,6 +38,7 @@ displayNextQuestion = (nextQuestionId) => {
       case (nextQuestionId === 'init'):
         setTimeout(() => this.displayNextQuestion(nextQuestionId), 400);
         break;
+
 
       case (nextQuestionId === 'contact'):
         this.handleClickOpen();
@@ -64,7 +63,7 @@ displayNextQuestion = (nextQuestionId) => {
           chats: chats
         })
 
-        setTimeout( () => this.displayNextQuestion(nextQuestionId), 500);
+        setTimeout(() => this.displayNextQuestion(nextQuestionId), 500);
          break;
     }
   } 
@@ -79,10 +78,26 @@ displayNextQuestion = (nextQuestionId) => {
   };
 
 
+  initDataset = (dataset) => {
+    this.setState({dataset: dataset})
+  }
+
   componentDidMount() {
-    db.collection('questions')
-    this.initAnswer = ""
-    this.selectAnswer(this.initAnswer, this.state.currentID)
+    (async() => {
+      const dataset = this.state.dataset
+
+      await db.collection('question').get().then(snapshots => {
+        snapshots.forEach(doc => {
+          const id = doc.id
+          const data = doc.data()
+          dataset[id] = data
+        })
+      })
+
+      this.initDataset(dataset)
+      const initAnswer = "";
+      this.selectAnswer(initAnswer, this.state.currentId)
+    })()
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
