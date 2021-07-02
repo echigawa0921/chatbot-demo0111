@@ -4,6 +4,7 @@ import './assets/styles/style.css';
 import { AnswersList, Chats } from './components/index';
 import { NextWeekOutlined } from '@material-ui/icons';
 import FormDialog from './components/Froms/FromDialog';
+import {db} from './firebase/index'
 
 export default class App extends React.Component {
   constructor(props){
@@ -79,6 +80,7 @@ displayNextQuestion = (nextQuestionId) => {
 
 
   componentDidMount() {
+    db.collection('questions')
     this.initAnswer = ""
     this.selectAnswer(this.initAnswer, this.state.currentID)
   }
