@@ -1,3 +1,33 @@
+# [SPA]かけっこ問い合わせbot
+
+将来的に、8年間取り組んだ陸上を教えるかけっこ教室を開きたいと考えています。  
+その、模擬アプリをSPAアプリとしてチャットbotを作成しました。  
+質問に応じて次の質問が少し遅れて飛んでくるチャットのような動きも意識しました   
+   
+   リンク：https://chat-bot0111.web.app/
+
+# 見本
+<img width="665" alt="スクリーンショット 2021-07-02 19 24 22" src="https://user-images.githubusercontent.com/69971834/124260906-2e515d80-db6b-11eb-948d-71acfa6045e1.png">
+
+# 環境
+React.   
+Typescript
+
+# 機能一覧
+・チャット機能    
+・正規表現    
+・お問い合わせ    
+・Slack連携    
+
+# 使い方
+①知りたい情報をチャット形式で知れます。    
+②最終的に問い合わせまでの質問が用意されています。    
+③問い合わせ後、slackに通知が来ます。  
+<img width="800" alt="スクリーンショット 2021-07-02 19 27 33" src="https://user-images.githubusercontent.com/69971834/124261322-9b64f300-db6b-11eb-80e4-834ace2118db.png">
+
+# 作成者
+yuki.Echigawa
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
