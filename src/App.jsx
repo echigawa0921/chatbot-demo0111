@@ -11,7 +11,7 @@ export default class App extends React.Component {
       answers:[],
       chats: [],
       currentId: "init",
-      dataset: {defaultDataset},
+      dataset: defaultDataset,
       open: false
     }
     this.selectAnswer = this.selectAnswer.bind(this)
@@ -39,7 +39,6 @@ displayNextQuestion = (nextQuestionId) => {
         setTimeout(() => this.displayNextQuestion(nextQuestionId), 400);
         break;
 
-
       case (nextQuestionId === 'contact'):
         this.handleClickOpen();
         break;
@@ -55,14 +54,9 @@ displayNextQuestion = (nextQuestionId) => {
       default:
         const chats = this.state.chats;
         chats.push({
-            text: selectedAnswer,
+            text: this.state.dataset[nextQuestionId],
             type: 'answer',
         })
-    
-        this.setState ({
-          chats: chats
-        })
-
         setTimeout(() => this.displayNextQuestion(nextQuestionId), 500);
          break;
     }
@@ -76,11 +70,6 @@ displayNextQuestion = (nextQuestionId) => {
   handleClose = () => {
       this.setState({open: false})
   };
-
-
-  initDataset = (dataset) => {
-    this.setState({dataset: dataset})
-  }
 
   componentDidMount() {
     const initAnswer = "";
