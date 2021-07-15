@@ -26,8 +26,6 @@ Typescript
 ③問い合わせ後、slackに通知が来ます。  
 <img width="800" alt="スクリーンショット 2021-07-02 19 27 33" src="https://user-images.githubusercontent.com/69971834/124261322-9b64f300-db6b-11eb-80e4-834ace2118db.png">
 
-# 作成者
-yuki.Echigawa
 
 # Getting Started with Create React App
 
